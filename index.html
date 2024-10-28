@@ -12,6 +12,10 @@
 			integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
 			crossorigin="anonymous"
 		/>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/intro.js/4.2.2/introjs.min.css"
+		/>
 		<title>Sigma Puzzle</title>
 
 		<link
@@ -23,7 +27,11 @@
 
 	<body>
 		<div class="d-flex flex-column justify-content-center align-items-center container">
-			<header class="text-center">
+			<header
+				class="text-center"
+				data-title="Welcome to Sigma Puzzle! 👋"
+				data-intro="Game Puzzle Menarik Untuk Alpha Gen's"
+			>
 				<div class="hero mb-3">
 					<img
 						id="title"
@@ -38,7 +46,11 @@
 				<div class="row">
 					<div class="col-12 bg-dark-subtle rounded mb-2 p-2 fw-bold text-center">🎮 Choose Your Themes!</div>
 				</div>
-				<div class="row justify-content-center bg-light-subtle">
+				<div
+					class="row justify-content-center bg-light-subtle"
+					data-title="Pilih tema permainan favoritmu!"
+					data-intro="Pilihlah tema permainan dan selesaikan puzzle yang akan melatih kretivitas dan kegigihanmu dalam menyelesaikannya!"
+				>
 					<div class="col-10 col-sm-6 col-md-4 col-lg-3 m-2 text-center">
 						<button
 							onclick="playGame('stop_bullying')"
@@ -82,6 +94,10 @@
 				</div>
 			</main>
 		</div>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/4.2.2/intro.min.js"></script>
+		<script>
+			introJs().start();
+		</script>
 		<script
 			src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
 			integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"

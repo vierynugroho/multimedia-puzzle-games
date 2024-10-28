@@ -7,7 +7,7 @@ let otherTile; // blank tile
 
 let turns = 0;
 
-let imageOrder = ['4', '2', '8', '5', '1', '6', '7', '9', '3'];
+let imageOrder = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
 function playGame(gameType) {
 	localStorage.setItem('gameType', gameType);
@@ -99,15 +99,15 @@ function dragEnd() {
 	if (isCompleted) {
 		setTimeout(() => {
 			Swal.fire({
-				title: "Selamat!",
-				text: "Anda telah menyelesaikan Sigma Puzzle",
-				icon: "success",
-				confirmButtonText: "Oke"
+				title: 'GG 🤯!',
+				text: `Puzzle Bertema ${localStorage.getItem('gameType')} telah Anda telah selesaikan! Saatnya pergi ke tantangan puzzle lainnya!`,
+				icon: 'success',
+				confirmButtonText: 'Gass!',
 			}).then((result) => {
 				if (result.isConfirmed) {
-					window.location.href = "index.html";
+					window.location.href = 'index.html';
 				}
 			});
-		}, 300); // 300 ms delay
+		}, 300); // 300ms delay
 	}
 }
