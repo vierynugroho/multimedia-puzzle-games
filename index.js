@@ -3,7 +3,7 @@ let columns = 3;
 let type;
 
 let currTile;
-let otherTile; //blank tile
+let otherTile; // blank tile
 
 let turns = 0;
 
@@ -21,13 +21,13 @@ window.onload = function () {
 			tile.id = r.toString() + '-' + c.toString();
 			tile.src = `./assets/pattern/${localStorage.getItem('gameType')}/` + imageOrder.shift() + '.jpg';
 
-			//DRAG FUNCTIONALITY
-			tile.addEventListener('dragstart', dragStart); //click an image to drag
-			tile.addEventListener('dragover', dragOver); //moving image around while clicked
-			tile.addEventListener('dragenter', dragEnter); //dragging image onto another one
-			tile.addEventListener('dragleave', dragLeave); //dragged image leaving anohter image
-			tile.addEventListener('drop', dragDrop); //drag an image over another image, drop the image
-			tile.addEventListener('dragend', dragEnd); //after drag drop, swap the two tiles
+			// DRAG FUNCTIONALITY
+			tile.addEventListener('dragstart', dragStart); // click an image to drag
+			tile.addEventListener('dragover', dragOver); // moving image around while clicked
+			tile.addEventListener('dragenter', dragEnter); // dragging image onto another one
+			tile.addEventListener('dragleave', dragLeave); // dragged image leaving another image
+			tile.addEventListener('drop', dragDrop); // drag an image over another image, drop the image
+			tile.addEventListener('dragend', dragEnd); // after drag drop, swap the two tiles
 
 			document.getElementById('board').append(tile);
 		}
@@ -49,7 +49,7 @@ function dragEnter(e) {
 function dragLeave() {}
 
 function dragDrop() {
-	otherTile = this; //this refers to the img tile being dropped on
+	otherTile = this; // this refers to the img tile being dropped on
 }
 
 function dragEnd() {
@@ -57,7 +57,7 @@ function dragEnd() {
 		return;
 	}
 
-	let currCoords = currTile.id.split('-'); //ex) "0-0" -> ["0", "0"]
+	let currCoords = currTile.id.split('-'); // ex) "0-0" -> ["0", "0"]
 	let r = parseInt(currCoords[0]);
 	let c = parseInt(currCoords[1]);
 
@@ -82,5 +82,32 @@ function dragEnd() {
 
 		turns += 1;
 		document.getElementById('turns').innerText = turns;
+	}
+
+	// Check if puzzle is completed
+	let isCompleted = true;
+	let tiles = document.querySelectorAll('#board img');
+	for (let i = 0; i < tiles.length; i++) {
+		let tileNumber = tiles[i].src.match(/(\d+)\.jpg$/)[1];
+		if (tileNumber != i + 1) {
+			isCompleted = false;
+			break;
+		}
+	}
+
+	// Show SweetAlert if puzzle is completed
+	if (isCompleted) {
+		setTimeout(() => {
+			Swal.fire({
+				title: "Selamat!",
+				text: "Anda telah menyelesaikan Sigma Puzzle",
+				icon: "success",
+				confirmButtonText: "Oke"
+			}).then((result) => {
+				if (result.isConfirmed) {
+					window.location.href = "index.html";
+				}
+			});
+		}, 300); // 300 ms delay
 	}
 }
