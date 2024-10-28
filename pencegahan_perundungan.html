@@ -1,71 +1,90 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8" />
-		<meta
-			name="viewport"
-			content="width=device-width, initial-scale=1.0"
-		/>
-		<link
-			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-			rel="stylesheet"
-			integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-			crossorigin="anonymous"
-		/>
-		<title>Sigma Puzzle | Pencegahan Perundungan</title>
-		<link
-			rel="stylesheet"
-			href="./index.css"
-		/>
-		<script src="./index.js"></script>
-	</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/intro.js/4.2.2/introjs.min.css"
+    />
 
-	<body>
-		<div class="d-flex justify-content-center align-items-center p-5 container">
-			<header class="px-4 text-center">
-				<img
-					id="title"
-					src="./assets/logo.png"
-				/>
-				<h6>Team Viery - Multimedia TI 7B 2021</h6>
-				<div
-					class="example d-flex flex-column justify-content-center align-items-center"
-					id="example"
-				>
-					<img
-						src="./assets/pattern/stop_bullying/10.jpg"
-						alt="example"
-						class="img-fluid w-50"
-					/>
-					<a
-						href="/"
-						class="btn btn-secondary m-2"
-						>Back To Main Menu</a
-					>
-				</div>
-			</header>
-			<main class="d-flex flex-column justify-content-center align-items-center w-75 mx-auto">
-				<div id="board"></div>
-				<h1 class="btn bg-dark-subtle m-2 w-50">
-					Turns:
-					<span
-						id="turns"
-						class="fw-bold text-danger"
-						>0</span
-					>
-				</h1>
-			</main>
-		</div>
+    <title>Sigma Puzzle | Pencegahan Perundungan</title>
+    <link rel="stylesheet" href="./index.css" />
+    <script src="./index.js"></script>
+  </head>
 
-		<script
-			src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-			integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-			crossorigin="anonymous"
-		></script>
-		<script
-			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
-			integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
-			crossorigin="anonymous"
-		></script>
-	</body>
+  <body>
+    <div class="d-flex justify-content-center align-items-center p-5 container">
+      <header class="px-4 text-center">
+        <img
+          id="title"
+          src="./assets/logo.png"
+          data-title="Welcome to Sigma Puzzle! 👋"
+          data-intro="Game Puzzle Menarik Untuk Alpha Gen's"
+          class="card-demo"
+        />
+        <h6>Team Viery - Multimedia TI 7B 2021</h6>
+        <div
+          class="example d-flex flex-column justify-content-center align-items-center"
+          id="example"
+        >
+          <img
+            src="./assets/pattern/pencegahan_perundungan/10.jpg"
+            alt="example"
+            class="img-fluid w-50"
+            data-title="Theme's Puzzle"
+            data-intro="Tema Puzzle yang dapat dipecahkan dengan strategi!"
+            class="card-demo"
+          />
+          <a
+            href="/"
+            class="btn btn-secondary m-2"
+            data-intro="Pilih Tema yang kamu inginkan dengan menuju Halaman Utama"
+            class="card-demo"
+            >Back To Main Menu</a
+          >
+        </div>
+      </header>
+      <main
+        class="d-flex flex-column justify-content-center align-items-center w-75 mx-auto"
+      >
+        <div
+          id="board"
+          data-title="Puzzle Games"
+          data-intro="Pindahkan Piece Puzzle untuk menyelesaikan Puzzle!"
+          class="card-demo"
+        ></div>
+        <h1
+          class="btn bg-dark-subtle m-2 w-50"
+          data-title="Turns"
+          data-intro="Kamu dapat melihat seberapa banyak kamu memindahkan Piece Puzzle"
+          class="card-demo"
+        >
+          Turns:
+          <span id="turns" class="fw-bold text-danger">0</span>
+        </h1>
+      </main>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/4.2.2/intro.min.js"></script>
+    <script>
+      introJs().start();
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+      integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
